@@ -1,4 +1,7 @@
 import { Controller } from '@nestjs/common';
+import { HorariosService } from './horarios.service';
 
 @Controller('horarios')
-export class HorariosController {}
+export class HorariosController {
+    constructor(private horarioServicio: HorariosService) {}
+}

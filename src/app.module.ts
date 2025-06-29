@@ -21,7 +21,7 @@ import { HorariosModule } from './horarios/horarios.module';
       password: process.env.DB_PASSWORD || 'password',
       database: process.env.DB_NAME || 'test',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // Nota: No usar en producción
+      synchronize: false, // Nota: No usar en producción
     }),
     UsuariosModule,
     SolicitudesModule,
