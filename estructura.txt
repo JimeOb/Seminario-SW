@@ -1,0 +1,51 @@
+src/
+├─ auth/
+│  ├─ dto/
+│  │  └─ login.dto.ts
+│  ├─ auth.module.ts
+│  ├─ auth.service.ts
+│  ├─ auth.controller.ts
+│  └─ jwt.strategy.ts      ← opcional, si usas JWT
+├─ usuarios/
+│  ├─ dto/
+│  │  ├─ create-user.dto.ts
+│  │  └─ user-login.dto.ts
+│  ├─ entities/
+│  │  └─ usuario.entity.ts
+│  ├─ usuarios.module.ts
+│  ├─ usuarios.service.ts
+│  └─ usuarios.controller.ts
+├─ recursos/
+│  ├─ dto/
+│  │  └─ create-recurso.dto.ts
+│  ├─ entities/
+│  │  └─ recurso.entity.ts
+│  ├─ recursos.module.ts
+│  ├─ recursos.service.ts
+│  └─ recursos.controller.ts
+├─ solicitudes/                ← HU_G_U1, HU_G_A1, HU_G_A2
+│  ├─ dto/
+│  │  ├─ create-solicitud.dto.ts
+│  │  └─ update-solicitud.dto.ts
+│  ├─ entities/
+│  │  └─ solicitud.entity.ts
+│  ├─ solicitudes.module.ts
+│  ├─ solicitudes.service.ts
+│  └─ solicitudes.controller.ts
+├─ reservas/                   ← HU_P_U1
+│  ├─ dto/
+│  │  └─ create-reserva.dto.ts
+│  ├─ entities/
+│  │  └─ reserva.entity.ts
+│  ├─ reservas.module.ts
+│  ├─ reservas.service.ts
+│  └─ reservas.controller.ts
+├─ valoraciones/               ← HU_G_U3
+│  ├─ dto/
+│  │  └─ create-valoracion.dto.ts
+│  ├─ entities/
+│  │  └─ valoracion.entity.ts
+│  ├─ valoraciones.module.ts
+│  ├─ valoraciones.service.ts
+│  └─ valoraciones.controller.ts
+└─ app.module.ts

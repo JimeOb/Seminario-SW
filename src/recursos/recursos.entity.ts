@@ -9,6 +9,8 @@ export class Recurso {
   @PrimaryColumn()
   idRecurso: number;
 
+//asddadsajj
+
   @Column()
   nombreRecurso: string;
 
