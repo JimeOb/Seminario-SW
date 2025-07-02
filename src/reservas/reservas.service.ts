@@ -1,17 +1,19 @@
-import { Get, Injectable } from '@nestjs/common';
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Reserva } from './reservas.entity';
 import { Repository } from 'typeorm';
-import { CrearReservaDTO } from './dto/crearReserva.dto';
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { CrearReservaDto } from './dto/crearReserva.dto';
 @Injectable()
 export class ReservasService {
     constructor(
         @InjectRepository(Reserva) private reservaRepositorio: Repository<Reserva>
     ){}
 
-    async crearReserva(reserva: CrearReservaDTO): Promise<Reserva> {
+    async crearReserva(reserva: CrearReservaDto): Promise<Reserva> {
         const nuevaReserva = this.reservaRepositorio.create({
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             idReserva: reserva.idReserva,
             horaInicio: reserva.horaInicio,
             horaFinal: reserva.horaFinal,

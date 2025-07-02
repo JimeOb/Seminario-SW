@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Recurso } from './recursos.entity';
 import { Repository } from 'typeorm';
@@ -23,5 +23,22 @@ export class RecursosService {
         if (tipo)        where.tipoRecurso = tipo;
         if (isDisponible !== undefined) where.isDisponible = isDisponible;
         return this.recursoRepositorio.find({ where });
+      }
+
+      async actualizarDisponibilidad(
+        idRecurso: number,
+        disponible: boolean,
+      ): Promise<Recurso> {
+        // 1) Recuperas la entidad
+        const recurso = await this.recursoRepositorio.findOne({
+          where: { idRecurso },
+        });
+        if (!recurso) {
+          throw new NotFoundException(`Recurso ${idRecurso} no existe`);
+        }
+    
+        // 2) La marcas y guardas
+        recurso.isDisponible = disponible;
+        return this.recursoRepositorio.save(recurso);
       }
 }

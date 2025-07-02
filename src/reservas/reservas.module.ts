@@ -7,6 +7,7 @@ import { Reserva } from './reservas.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Reserva])], // Aquí puedes agregar tus entidades si las tienes
   controllers: [ReservasController],
-  providers: [ReservasService]
+  providers: [ReservasService],
+  exports: [ReservasService]
 })
 export class ReservasModule {}
