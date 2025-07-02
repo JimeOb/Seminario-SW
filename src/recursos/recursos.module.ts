@@ -7,6 +7,7 @@ import { Recurso } from './recursos.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Recurso])],
   controllers: [RecursosController],
-  providers: [RecursosService]
+  providers: [RecursosService],
+  exports: [RecursosService],
 })
 export class RecursosModule {}

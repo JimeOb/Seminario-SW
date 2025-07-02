@@ -9,8 +9,6 @@ export class Recurso {
   @PrimaryColumn()
   idRecurso: number;
 
-//asddadsajj
-
   @Column()
   nombreRecurso: string;
 
@@ -19,6 +17,22 @@ export class Recurso {
 
   @Column()
   tipoRecurso: string;
+
+  @Column({
+    type: 'tinyint',
+    width: 1,
+    default: 1,
+    /** Convierte 0/1 ↔ false/true */
+    transformer: {
+      to(value: boolean): number {
+        return value ? 1 : 0;
+      },
+      from(value: number): boolean {
+        return Boolean(value);
+      },
+    },
+  })
+  isDisponible: boolean;
 
   @Column({ type: 'time' })
   horaInicioDisponibilidad: string;

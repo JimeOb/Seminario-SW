@@ -5,4 +5,5 @@ export class CrearRecursoDto {
       tipoRecurso: string;
       horaInicioDisponibilidad: string;
       horaFinDisponibilidad: string;
+      isDisponible: boolean;
 }
